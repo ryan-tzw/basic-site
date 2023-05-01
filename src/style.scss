@@ -1,0 +1,38 @@
+$yeseva: 'Yeseva One', cursive;
+$raleway: 'Raleway', sans-serif;
+$playfair-display: 'Playfair Display', serif;
+
+$title-font: min(calc(8vw + 32px), 128px) / 64px $yeseva;
+$subtitle-font: min(calc(8vw + 16px), 32px) $raleway;
+$header-font: min(calc(8vw + 32px), 96px) $playfair-display;
+$body-font: min(calc(8vw + 32px), 32px) $raleway;
+
+$bg-color: #2d3032;
+$main-color: aliceblue;
+
+* {
+    margin: 0;
+    color: $main-color;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: $bg-color;
+}
+
+.grid-container {
+    grid-template-columns: ;
+}
+
+h1 {
+    font: $title-font;
+}
+
+h2 {
+    font: $header-font;
+}
+
+h3 {
+    font: $subtitle-font;
+}
