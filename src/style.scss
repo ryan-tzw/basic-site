@@ -2,27 +2,66 @@ $yeseva: 'Yeseva One', cursive;
 $raleway: 'Raleway', sans-serif;
 $playfair-display: 'Playfair Display', serif;
 
-$title-font: min(calc(8vw + 32px), 128px) / 64px $yeseva;
+$title-font-size: min(calc(8vw + 32px), 96px);
+$title-font: $title-font-size / $title-font-size $yeseva;
+
 $subtitle-font: min(calc(8vw + 16px), 32px) $raleway;
-$header-font: min(calc(8vw + 32px), 96px) $playfair-display;
-$body-font: min(calc(8vw + 32px), 32px) $raleway;
+$header-font: min(calc(8vw + 32px), 64px) $playfair-display;
+$body-font: min(calc(8vw + 12px), 20px) $raleway;
 
 $bg-color: #2d3032;
 $main-color: aliceblue;
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 * {
     margin: 0;
     color: $main-color;
+
+    // For debugging
+    // border: solid red 1px;
 }
 
 html,
 body {
     height: 100%;
-    background-color: $bg-color;
+    font: $body-font;
 }
 
-.grid-container {
-    grid-template-columns: 10vw 1fr 10vw;
+body {
+    line-height: 1.5;
+    background-color: $bg-color;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main-wrapper {
+    flex: 1;
+    margin: 0 auto;
+}
+
+main {
+    width: auto;
+    margin: 0 5vw;
+}
+
+@media (min-width: 1024px) {
+    main {
+        width: 780px;
+    }
+}
+
+// @media (min-width: 1280px) {
+//     main {
+//         margin: 0 25vw;
+//     }
+// }
+
+section {
+    isolation: isolate;
 }
 
 h1 {
@@ -31,8 +70,131 @@ h1 {
 
 h2 {
     font: $header-font;
+    margin: 50px 0 20px 0;
 }
 
 h3 {
     font: $subtitle-font;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.title {
+    padding-bottom: 15px;
+    margin: 50px 0;
+    border-bottom: solid $main-color 2px;
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border: solid $main-color 2px;
+        border-radius: 90px;
+        background-color: $main-color;
+
+        bottom: 0;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        translate: -50% 50%;
+    }
+}
+
+.contact {
+    ul {
+        padding: 0;
+        li {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            list-style: none;
+        }
+    }
+}
+
+.about p {
+    margin-bottom: 1em;
+}
+
+.clickableButton {
+    font: $body-font;
+    border: none;
+    background-color: transparent;
+    padding: 1em 1.5em;
+    border: solid $main-color 1px;
+    margin: 0 1em 1em 0;
+
+    background-size: 202% 100%;
+    background-image: linear-gradient(to right, transparent 50%, aliceblue 50%);
+    transition: color 250ms ease, background-position 250ms ease;
+    &:hover {
+        cursor: pointer;
+        background-position: -99% 0;
+        color: $bg-color;
+    }
+}
+
+footer {
+    margin-top: 15px;
+    flex-shrink: 0;
+}
+
+.footer-accent {
+    bottom: 0;
+    margin-top: 10px;
+    height: 5px;
+    width: 100vw;
+    max-width: 100%;
+    background-image: linear-gradient(
+        to right,
+        #1af7c4,
+        #7a74e6,
+        #871dd3,
+        #fb2983,
+        #ffcbe0,
+        #fb2983,
+        #871dd3,
+        #7a74e6,
+        #1af7c4
+    );
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#background-pattern {
+    height: 100vh;
+    width: 100vw;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 9%, transparent 9%);
+    background-position: 0% 0%;
+    background-size: 6vmin 6vmin;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    &-track {
+        background: transparent;
+    }
+    &-thumb {
+        background: $main-color;
+    }
 }

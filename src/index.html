@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <link rel="icon" type="image/svg+xml" href="./logo.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./style.scss" />
         <!-- Google fonts -->
@@ -17,32 +17,64 @@
     </head>
     <body>
         <div class="container">
-            <div class="grid-container">
-                <h1>Developer & Designer</h1>
-                <h3>Hi there, I'm Ryan.</h3>
-                <p>
-                    I'm a creative developer with a broad range of interests, including but not
-                    limited to:
-                </p>
-                <ul>
-                    <li>Web development & design</li>
-                    <li>Software development</li>
-                    <li>Computer graphics</li>
-                    <li>3D Graphics & Art</li>
-                </ul>
-                <h2>Contact</h2>
-                <ul>
-                    <li><a href="https://github.com/ryan-tzw">Github</a></li>
-                    <li><a href="https://www.linkedin.com/in/ryan-tzw/">LinkedIn</a></li>
-                </ul>
-                <h2>About this site</h2>
-                <p>
-                    This is just a simple, basic site that I quickly did up just to have something
-                    available for a different project. If you're interested, take a look!
-                </p>
-                <a href="">Go to project</a>
+            <div class="main-wrapper">
+                <main>
+                    <section class="title">
+                        <h1>Dev & Design</h1>
+                    </section>
+                    <section class="intro">
+                        <h3>Hi there, I'm Ryan.</h3>
+                        <p>
+                            I'm a creative developer with a broad range of interests, including but
+                            not limited to:
+                        </p>
+                        <ul>
+                            <li>Web development & design</li>
+                            <li>Software development</li>
+                            <li>Computer graphics</li>
+                            <li>3D Graphics & Art</li>
+                        </ul>
+                    </section>
+                    <section class="contact">
+                        <h2>Contact</h2>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/ryan-tzw">
+                                    <button type="button" class="clickableButton">Github</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/ryan-tzw/">
+                                    <button type="button" class="clickableButton">LinkedIn</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:ryanteozw@gmail.com">
+                                    <button type="button" class="clickableButton">Email</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="about">
+                        <h2>About this site</h2>
+                        <p>
+                            This is just a simple, basic site that I quickly did up just to have
+                            something available for a different project. If you're interested, take
+                            a look!
+                        </p>
+                        <a href="">
+                            <button class="clickableButton">Go to project</button>
+                        </a>
+                    </section>
+                </main>
             </div>
+            <footer>
+                <div class="footer-accent"></div>
+            </footer>
         </div>
+
+        <div id="background-pattern"></div>
+
         <script type="module" src="./main.js"></script>
     </body>
 </html>
