@@ -45,7 +45,7 @@ body {
 
 main {
     width: auto;
-    margin: 0 5vw;
+    margin: 0 5vw 5vw 5vw;
 }
 
 @media (min-width: 1024px) {
@@ -104,6 +104,34 @@ h3 {
     }
 }
 
+.intro h2,
+h3 {
+    margin-bottom: 1em;
+}
+
+.site-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 1em;
+    flex-wrap: wrap;
+    li {
+        flex: 0 1 45%;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 150ms ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: transform 200ms ease-in-out;
+        }
+    }
+}
+
 .contact {
     ul {
         padding: 0;
@@ -116,8 +144,19 @@ h3 {
     }
 }
 
-.about p {
-    margin-bottom: 1em;
+.about {
+    ul {
+        padding: 0;
+        li {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            list-style: none;
+        }
+    }
+    p {
+        margin-bottom: 1em;
+    }
 }
 
 .clickableButton {
@@ -146,7 +185,7 @@ footer {
 .footer-accent {
     bottom: 0;
     margin-top: 10px;
-    height: 5px;
+    height: 6px;
     width: 100vw;
     max-width: 100%;
     background-image: linear-gradient(
@@ -196,5 +235,6 @@ footer {
     }
     &-thumb {
         background: $main-color;
+        border-radius: 5px;
     }
 }
