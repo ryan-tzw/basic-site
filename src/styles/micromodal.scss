@@ -1,0 +1,202 @@
+/**************************\
+  Basic Modal Styles
+\**************************/
+
+.modal {
+    p {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: break-word;
+        margin-bottom: 1rem;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__container {
+        background-color: $bg-color;
+        padding: 0;
+        max-width: 780px;
+        max-height: 100vh;
+        border-radius: 0px;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    &__content-wrapper {
+        padding: 0.75rem 1.5rem 1.25rem 1.5rem;
+    }
+
+    &-footer {
+        margin-top: 0px;
+        flex-shrink: 0;
+    }
+
+    &-footer-accent {
+        bottom: 0;
+        margin-top: 0px;
+        height: 3px;
+        width: 100vw;
+        max-width: 100%;
+        background-image: linear-gradient(
+            to right,
+            #1af7c4,
+            #7a74e6,
+            #871dd3,
+            #fb2983,
+            #ffcbe0,
+            #fb2983,
+            #871dd3,
+            #7a74e6,
+            #1af7c4
+        );
+        background-size: 400% 400%;
+        animation: gradient 8s ease infinite;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    margin: 0.6rem;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 0;
+
+    transition: background 0.25s ease-in-out;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 2px;
+        background-color: $main-color;
+        transform-origin: center;
+        transition: transform 0.25s ease-in-out;
+    }
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:hover::before,
+    &:hover::after {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.modal__btn {
+    font: $body-font;
+    border: none;
+    background-color: transparent;
+    padding: 0.75em 1.25em;
+    border: solid $main-color 1px;
+
+    background-size: 202% 100%;
+    background-image: linear-gradient(to right, transparent 50%, aliceblue 50%);
+    transition: color 250ms ease, background-position 250ms ease;
+
+    &:hover {
+        cursor: pointer;
+        background-position: -99% 0;
+        color: $bg-color;
+    }
+}
+
+/**************************\
+   Modal Animation
+\**************************/
+@keyframes mmfadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes mmfadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes mmslideIn {
+    from {
+        transform: translateY(-10%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes mmslideOut {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10%);
+    }
+}
+
+.micromodal-slide {
+    display: none;
+}
+
+.micromodal-slide.is-open {
+    display: block;
+}
+
+.micromodal-slide[aria-hidden='false'] .modal__overlay {
+    animation: mmfadeIn 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='false'] .modal__container {
+    animation: mmslideIn 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='true'] .modal__overlay {
+    animation: mmfadeOut 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='true'] .modal__container {
+    animation: mmslideOut 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+    will-change: transform;
+}

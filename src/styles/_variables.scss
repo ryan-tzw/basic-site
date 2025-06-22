@@ -1,0 +1,13 @@
+$yeseva: 'Yeseva One', cursive;
+$raleway: 'Raleway', sans-serif;
+$playfair-display: 'Playfair Display', serif;
+
+$title-font-size: min(calc(8vw + 32px), 96px);
+$title-font: $title-font-size / $title-font-size $yeseva;
+
+$subtitle-font: min(calc(8vw + 16px), 32px) $raleway;
+$header-font: min(calc(8vw + 32px), 64px) $playfair-display;
+$body-font: min(calc(8vw + 12px), 20px) $raleway;
+
+$bg-color: #2d3032;
+$main-color: aliceblue;

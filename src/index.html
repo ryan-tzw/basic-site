@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="./logo.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./style.scss" />
+        <link rel="stylesheet" href="./styles/style.scss" />
         <!-- Google fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,31 +23,45 @@
                         <h1>Dev & Design</h1>
                     </section>
                     <section class="intro">
-                        <h3>Hi there, I'm Ryan.</h3>
-                        <p>I'm a creative developer with a broad range of interests, including:</p>
-                        <ul>
-                            <li>Web development & design</li>
-                            <li>Creating 3D experiences</li>
-                            <li>3D modelling & digital art</li>
-                            <li>Machine learning</li>
-                        </ul>
+                        <h3>Hi there! I'm Ryan.</h3>
+                        <p>
+                            I'm a creative developer who loves making stuff, and I have a passion
+                            for exploring new technologies and bringing imaginative ideas to life
+                            through code.
+                        </p>
+                        <p>
+                            My main interest lies in frontend development, where I enjoy
+                            transforming designs into dynamic, interactive experiences with
+                            Three.js. I also have a strong foundation in React and TypeScript, which
+                            I use to build robust and scalable web applications.
+                        </p>
+                        <p>
+                            Recently, I've developed a growing interest in the field of machine
+                            learning, and I'm actively expanding my skills through hands-on projects
+                            and continuous learning.
+                        </p>
                     </section>
 
                     <section class="contact">
                         <h2>Contact</h2>
+                        <p>
+                            If you'd like to get in touch, my preferred mode of communication is via
+                            telegram @ryantzw.
+                        </p>
+                        <p>Alternatively, you can find me on the following platforms:</p>
                         <ul>
                             <li>
-                                <a href="https://github.com/ryan-tzw" target="_top">
+                                <a href="https://github.com/ryan-tzw" target="_blank">
                                     <button type="button" class="clickableButton">Github</button>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/ryan-tzw/" target="_top">
+                                <a href="https://www.linkedin.com/in/ryan-tzw/" target="_blank">
                                     <button type="button" class="clickableButton">LinkedIn</button>
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:ryanteozw@gmail.com" target="_top">
+                                <a href="mailto:ryanteozw@gmail.com" target="_blank">
                                     <button type="button" class="clickableButton">Email</button>
                                 </a>
                             </li>
@@ -55,16 +69,26 @@
                     </section>
 
                     <section class="projects">
-                        <h2>Experiments</h2>
+                        <h2>Projects</h2>
                         <ul class="site-links">
                             <li>
-                                <a href="https://dissolve-shader.vercel.app/" target="_blank">
+                                <a data-micromodal-trigger="project-1">
                                     <img src="./lab2.jpg" alt="" />
                                 </a>
                             </li>
                             <li>
-                                <a href="https://audio-visualiser-one.vercel.app/" target="_blank">
+                                <a data-micromodal-trigger="project-2">
                                     <img src="./lab1.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a data-micromodal-trigger="project-3">
+                                    <img src="./search1.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a data-micromodal-trigger="project-4">
+                                    <img src="./mnist1.png" alt="" />
                                 </a>
                             </li>
                         </ul>
@@ -97,6 +121,21 @@
                             </li>
                         </ul>
                     </section>
+
+                    <section class="hobbies">
+                        <h2>Other Interests</h2>
+                        <p>
+                            When I'm not coding, I enjoy playing video games, 3D modelling &
+                            printing, and occasionally creating digital art. I find that these
+                            hobbies not only provide a great way to relax, but also inspire my work
+                            as a developer and designer.
+                        </p>
+                        <p>
+                            In the future, I would also love to also create and release my own game,
+                            but for now there are a lot of other things I want prioritise and learn
+                            more about first!
+                        </p>
+                    </section>
                 </main>
             </div>
             <footer>
@@ -104,7 +143,231 @@
             </footer>
         </div>
 
+        <!-- Modals (kind of a mess but it's simple enough) -->
+        <div class="modal micromodal-slide" id="project-1" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal__container" role="dialog" aria-modal="true">
+                    <img src="./lab2.jpg" alt="" class="modal__image" />
+
+                    <div class="modal__content-wrapper">
+                        <p>
+                            A Three.js demo that applies a custom dissolve effect to 3D meshes by
+                            injecting shader code directly into a MeshStandardMaterial.
+                        </p>
+                        <p>JavaScript · Three.js · GLSL</p>
+                        <a href="https://dissolve-shader.vercel.app/" target="_blank">
+                            <button class="modal__btn">Visit Website</button>
+                        </a>
+                    </div>
+
+                    <button
+                        class="modal__close"
+                        aria-label="Close modal"
+                        data-micromodal-close
+                    ></button>
+
+                    <footer class="modal-footer"><div class="modal-footer-accent"></div></footer>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal micromodal-slide" id="project-2" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal__container" role="dialog" aria-modal="true">
+                    <img src="./lab1.jpg" alt="" class="modal__image" />
+
+                    <div class="modal__content-wrapper">
+                        <p>
+                            A React-based audio visualiser that captures live microphone input with
+                            the Web Audio API and renders it in real time as custom shader-driven
+                            graphics using WebGL via React Three Fiber and Three.js
+                        </p>
+                        <p>React · JavaScript · Three.js · GLSL · Web Audio API</p>
+                        <a href="https://audio-visualiser-one.vercel.app/" target="_blank">
+                            <button class="modal__btn">Visit Website</button>
+                        </a>
+                    </div>
+
+                    <button
+                        class="modal__close"
+                        aria-label="Close modal"
+                        data-micromodal-close
+                    ></button>
+
+                    <footer class="modal-footer"><div class="modal-footer-accent"></div></footer>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal micromodal-slide" id="project-3" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal__container" role="dialog" aria-modal="true">
+                    <section class="embla">
+                        <div class="embla__viewport">
+                            <div class="embla__container">
+                                <div class="embla__slide">
+                                    <img
+                                        src="./search1.png"
+                                        alt="A preview of the project"
+                                        class="modal__image"
+                                    />
+                                </div>
+                                <div class="embla__slide">
+                                    <img
+                                        src="./search2.png"
+                                        alt="A preview of the project"
+                                        class="modal__image"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="embla__controls">
+                            <div class="embla__buttons">
+                                <button class="embla__button embla__button--prev" type="button">
+                                    <svg class="embla__button__svg" viewBox="0 0 532 532">
+                                        <path
+                                            fill="currentColor"
+                                            d="M355.66 11.354c13.793-13.805 36.208-13.805 50.001 0 13.785 13.804 13.785 36.238 0 50.034L201.22 266l204.442 204.61c13.785 13.805 13.785 36.239 0 50.044-13.793 13.796-36.208 13.796-50.002 0a5994246.277 5994246.277 0 0 0-229.332-229.454 35.065 35.065 0 0 1-10.326-25.126c0-9.2 3.393-18.26 10.326-25.2C172.192 194.973 332.731 34.31 355.66 11.354Z"
+                                        ></path>
+                                    </svg>
+                                </button>
+
+                                <button class="embla__button embla__button--next" type="button">
+                                    <svg class="embla__button__svg" viewBox="0 0 532 532">
+                                        <path
+                                            fill="currentColor"
+                                            d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
+                                        ></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="embla__dots"></div>
+                        </div>
+                    </section>
+
+                    <div class="modal__content-wrapper">
+                        <p>
+                            I developed a lightweight semantic search engine in Python that indexes
+                            arXiv abstracts. It fetches paper metadata, preprocesses each abstract,
+                            generates local embeddings with SentenceTransformers, and stores them in
+                            a persistent ChromaDB vector store. You can then interactively query the
+                            most relevant papers via a simple CLI.
+                        </p>
+                        <p>
+                            Python · NLP · Text preprocessing · SentenceTransformers embeddings ·
+                            ChromaDB vector search
+                        </p>
+                        <a href="https://github.com/ryan-tzw/semantic-search" target="_blank">
+                            <button class="modal__btn">Visit Github Repo</button>
+                        </a>
+                    </div>
+
+                    <button
+                        class="modal__close"
+                        aria-label="Close modal"
+                        data-micromodal-close
+                    ></button>
+
+                    <footer class="modal-footer"><div class="modal-footer-accent"></div></footer>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal micromodal-slide" id="project-4" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal__container" role="dialog" aria-modal="true">
+                    <section class="embla">
+                        <div class="embla__viewport">
+                            <div class="embla__container">
+                                <div class="embla__slide">
+                                    <img
+                                        src="./mnist1.png"
+                                        alt="A preview of the project"
+                                        class="modal__image"
+                                    />
+                                </div>
+                                <div class="embla__slide">
+                                    <img
+                                        src="./mnist2.png"
+                                        alt="A preview of the project"
+                                        class="modal__image"
+                                    />
+                                </div>
+                                <div class="embla__slide">
+                                    <img
+                                        src="./mnist3.png"
+                                        alt="A preview of the project"
+                                        class="modal__image"
+                                    />
+                                </div>
+                                <div class="embla__slide">
+                                    <img
+                                        src="./mnist4.png"
+                                        alt="A preview of the project"
+                                        class="modal__image"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="embla__controls">
+                            <div class="embla__buttons">
+                                <button class="embla__button embla__button--prev" type="button">
+                                    <svg class="embla__button__svg" viewBox="0 0 532 532">
+                                        <path
+                                            fill="currentColor"
+                                            d="M355.66 11.354c13.793-13.805 36.208-13.805 50.001 0 13.785 13.804 13.785 36.238 0 50.034L201.22 266l204.442 204.61c13.785 13.805 13.785 36.239 0 50.044-13.793 13.796-36.208 13.796-50.002 0a5994246.277 5994246.277 0 0 0-229.332-229.454 35.065 35.065 0 0 1-10.326-25.126c0-9.2 3.393-18.26 10.326-25.2C172.192 194.973 332.731 34.31 355.66 11.354Z"
+                                        ></path>
+                                    </svg>
+                                </button>
+
+                                <button class="embla__button embla__button--next" type="button">
+                                    <svg class="embla__button__svg" viewBox="0 0 532 532">
+                                        <path
+                                            fill="currentColor"
+                                            d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
+                                        ></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="embla__dots"></div>
+                        </div>
+                    </section>
+
+                    <div class="modal__content-wrapper">
+                        <p>
+                            I implemented a simple 2-layer neural network from scratch in Python to
+                            classify handwritten digits from the MNIST dataset, which achieved 88%
+                            accuracy in just 1000 iterations.
+                        </p>
+                        <p>
+                            The workflow loads and preprocesses CSV data with pandas, normalizes
+                            pixel values, and uses NumPy to build and train the model, implementing
+                            ReLU activations, softmax outputs, forward/backward propagation, and
+                            gradient descent.
+                        </p>
+                        <p>
+                            Python · Neural Net Fundamentals (ReLU, Softmax, One-Hot Encoding,
+                            Forward/Back Propagation) · NumPy · Pandas · Matplotlib
+                        </p>
+                    </div>
+
+                    <button
+                        class="modal__close"
+                        aria-label="Close modal"
+                        data-micromodal-close
+                    ></button>
+
+                    <footer class="modal-footer"><div class="modal-footer-accent"></div></footer>
+                </div>
+            </div>
+        </div>
+
         <div id="background-pattern"></div>
-        <script type="module" src="./script.js"></script>
+
+        <script type="module" src="./js/script.js"></script>
     </body>
 </html>
