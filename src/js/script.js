@@ -6,9 +6,9 @@ import { addDotBtnsAndClickHandlers } from './EmblaCarouselDotButtons.js'
 
 initBackgroundAnimation()
 
-MicroModal.init({ awaitCloseAnimation: true, disableFocus: true })
+MicroModal.init({ awaitCloseAnimation: true, disableFocus: true, disableScroll: true })
 
-const OPTIONS = { loop: true /* …etc… */ }
+const OPTIONS = { loop: true }
 
 // A helper to initialize one Embla instance + its controls
 function initEmblaCarousel(emblaNode) {
